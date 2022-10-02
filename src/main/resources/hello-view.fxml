@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphMaker.Controller">
+   <top>
+      <VBox prefHeight="750.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" prefHeight="49.0" prefWidth="560.0">
+               <children>
+                  <Button fx:id="button1" mnemonicParsing="false" onAction="#onButton1Pressed" text="xlsxファイルを選択">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Hiragino Sans W4" size="13.0" />
+                     </font>
+                  </Button>
+                  <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" text="または，ファイルをここにドロップ......">
+                     <font>
+                        <Font name="Hiragino Sans W4" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x軸に表示する数値のExcel中の項目名">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="y軸に表示する数値のExcel中の項目名">
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x座標のラベル名（LaTeXで記述）">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="10.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="y座標のラベル名（LaTeXで記述）">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="10.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="キャプション">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ラベル">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                        <CheckBox fx:id="whetherzero" mnemonicParsing="false" text="軸の原点を(0,0)に設定する">
+                           <padding>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </padding>
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="rownumber" mnemonicParsing="false" text="行番号を指定する">
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                        </CheckBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="n行目から">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="m行目まで">
+                           <font>
+                              <Font name="Hiragino Sans W4" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="6.5" left="5.0" top="6.5" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="104.0" prefWidth="312.0">
+                     <children>
+                        <TextField fx:id="xName">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="yName" prefHeight="26.0" prefWidth="345.0">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="xLabel">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="yLabel">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="captionoflatex">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="labeloflatex">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="startofrow">
+                           <VBox.margin>
+                              <Insets left="15.0" top="65.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="endofrow">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="Button2" mnemonicParsing="false" onAction="#onButton2Pressed" text="作成！">
+               <font>
+                  <Font name="Hiragino Sans W4" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="250.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <TextArea fx:id="result1" prefHeight="89.0" prefWidth="590.0" promptText="ここには，プリアンブルに記載すべき内容が表示されます">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Courier New" size="13.0" />
+               </font>
+            </TextArea>
+            <TextArea fx:id="result2" prefHeight="178.0" prefWidth="590.0" promptText="ここには，グラフを作成するLaTeXコマンドが表示されます．">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Courier New" size="13.0" />
+               </font>
+            </TextArea>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
